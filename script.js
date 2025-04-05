@@ -72,3 +72,5 @@ console.log(buscarLibrosPorLetra(libros, "E")); // ["El fin de la eternidad", "E
 function ordenarLibros(libros) {
     return libros.sort();
 }
+
+// Llamar a la función ordenarLibros y pasarle el arreglo de libros.
