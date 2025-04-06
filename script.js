@@ -74,3 +74,80 @@ function ordenarLibros(libros) {
 }
 
 // Llamar a la función ordenarLibros y pasarle el arreglo de libros.
+console.log(ordenarLibros(libros)); // ["El fin de la eternidad", "El juego del ángel", "Hábitos atómicos", "Inmune", "Un mundo feliz"]
+
+// Ejercicio 6
+// Crear una función que reciba un arreglo de libros y regrese todos los libros en mayúsculas.
+function librosMayusculas(libros) {
+    return libros.map(libro => libro.toUpperCase());
+}
+
+// Llamar a la función librosMayusculas y pasarle el arreglo de libros.
+console.log(librosMayusculas(libros)); 
+// ["EL FIN DE LA ETERNIDAD", "EL JUEGO DEL ÁNGEL", "HÁBITOS ATÓMICOS", "INMUNE", "UN MUNDO FELIZ"]
+
+// Ejercicio 7
+// Crear una función que reciba un arreglo de libros y una posición N. 
+// La función debe regresar el nombre del libro en la posición N al revés.
+function invertirNombre(libros, posicion) {
+    if (posicion >= 0 && posicion < libros.length) {
+        return libros[posicion].split("").reverse().join("");
+    }
+    return null; // En caso de que la posición no sea válida
+}
+
+// Llamar a la función invertirNombre y pasarle el arreglo de libros y una posición.
+console.log(invertirNombre(libros, 3)); // "socimóta sotibáH"
+console.log(invertirNombre(libros, 0)); // "48"
+console.log(invertirNombre(libros, 5)); // null (posición no válida)
+console.log(invertirNombre(libros, -1)); // null (posición no válida)
+console.log(invertirNombre(libros, 2)); // "dadinorete la nif lE"
+console.log(invertirNombre(libros, 4)); // "enumi" (posición válida)
+console.log(invertirNombre(libros, 1)); // "zilef od odnum nU" (posición válida)
+console.log(invertirNombre(libros, 3)); // "socimóta sotibáH" (posición válida)
+console.log(invertirNombre(libros, 0)); // "48" (posición válida)
+console.log(invertirNombre(libros, 2)); // "dadinorete la nif lE" (posición válida)
+console.log(invertirNombre(libros, 4)); // "enumi" (posición válida)
+console.log(invertirNombre(libros, 1)); // "zilef od odnum nU" (posición válida)
+
+// Ejercicio 8
+// Crear una función que reciba un arreglo de libros y un libro. La función debe evitar agregar duplicados.
+function agregarLibroSinDuplicados(libros, libro) {
+    if (!libros.includes(libro)) {
+        libros.push(libro);
+    } else {
+        console.log("El libro ya existe en el arreglo.");
+    }
+}
+
+// Llamar a la función agregarLibroSinDuplicados y pasarle el arreglo de libros y un libro.
+agregarLibroSinDuplicados(libros, "1984"); // "El libro ya existe en el arreglo."
+agregarLibroSinDuplicados(libros, "El juego del ángel"); // "El libro ya existe en el arreglo."
+agregarLibroSinDuplicados(libros, "Cien años de soledad"); // Agrega el libro
+
+console.log(libros); // ["El fin de la eternidad", "El juego del ángel", "Hábitos atómicos", "Inmune", "Un mundo feliz", "Cien años de soledad"]
+
+// Ejercicio 9
+// Crear una función que reciba un arreglo de libros y un libro. La función debe eliminar el libro del arreglo de libros.
+// Si el libro no existe, mostrar un mensaje de error.
+function eliminarLibroConError(libros, libro) {
+    const index = libros.indexOf(libro);
+    if (index !== -1) {
+        libros.splice(index, 1);
+    } else {
+        console.log("El libro no existe en el arreglo.");
+    }
+}
+
+// Llamar a la función eliminarLibroConError y pasarle el arreglo de libros y un libro.
+eliminarLibroConError(libros, "El juego del ángel"); // Elimina el libro
+eliminarLibroConError(libros, "El juego del ángel"); // "El libro no existe en el arreglo."
+eliminarLibroConError(libros, "1984"); // "El libro no existe en el arreglo."
+eliminarLibroConError(libros, "Un mundo feliz"); // Elimina el libro
+
+
+console.log(libros); // ["El fin de la eternidad", "Hábitos atómicos", "Inmune", "Cien años de soledad"]
+
+// Ejercicio 10
+// Crear una función que reciba un arreglo de libros y regrese todos los libros en orden alfabético.
+// Si el arreglo está vacío, regresar un mensaje indicando que no hay libros.
